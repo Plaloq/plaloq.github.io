@@ -17,7 +17,7 @@
       var code = getParameterByName('code');
       if (code) {
         var redirectLink = 'miapp://autenticacion-completada?code=' + code;
-        alert('Autenticación exitosa. Redirigiendo a la aplicación...');
+        alert('Autenticación exitosa. Redirigiendo a la aplicación...' + code);
         window.location.href = redirectLink;
       } else {
         alert('Se produjo un error durante la autenticación.');
