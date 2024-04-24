@@ -1,34 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redireccionando...</title>
-  <script>
-    function getParameterByName(name, url) {
-      if (!url) url = window.location.href;
-      name = name.replace(/[\[\]]/g, "\\$&");
-      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
-    function handleAuthentication() {
-      var code = getParameterByName('code');
-      if (code) {
-        var redirectLink = 'miapp://autenticacion-completada?code=' + code;
-        alert('Autenticación exitosa. Redirigiendo a la aplicación...' + code);
-        window.location.href = redirectLink;
-      } else {
-        alert('Se produjo un error durante la autenticación.');
-        window.location.href = 'miapp://error-autenticacion';
-      }
-    }
-
-    window.onload = handleAuthentication;
-  </script>
+  <meta http-equiv="refresh" content="10;url=miapp://">
 </head>
 <body>
-  <h1>Redireccionando...</h1>
 </body>
 </html>
