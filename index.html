@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Lapsos de Tiempo</title>
+    <title>Calculadora de Horas trabajadas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,7 +63,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de Lapsos de Tiempo</h1>
+        <h1>Calculadora de Horas trabajadas</h1>
         <form id="timeForm">
             <label for="startTime">Hora de inicio:</label>
             <input type="time" id="startTime" required>
@@ -91,16 +91,16 @@
             const endDate = new Date();
             endDate.setHours(endHours, endMinutes);
 
-            let diff = (endDate - startDate) / 1000 / 60; // Diferencia en minutos
+            let diff = (endDate - startDate) / 1000 / 60;
 
             if (diff < 0) {
-                diff += 24 * 60; // Si el tiempo final es al día siguiente
+                diff += 24 * 60;
             }
 
             const hours = Math.floor(diff / 60);
             const minutes = diff % 60;
 
-            document.getElementById('result').textContent = `Tiempo transcurrido: ${hours} horas y ${minutes} minutos.`;
+            document.getElementById('result').textContent = `Tiempo trabajado: ${hours} horas y ${minutes} minutos.`;
         });
     </script>
 </body>
